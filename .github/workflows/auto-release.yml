@@ -5,7 +5,7 @@ on:
     branches: [develop]
     types: [opened, synchronize, reopened, closed]
     paths:
-      - "packages/site/package.json"
+      - "./package.json"
   issue_comment:
     types: [edited]
 
@@ -22,7 +22,7 @@ jobs:
       - name: Extract version
         id: version
         run: |
-          echo "version=$(node -p 'require("./packages/site/package.json").version')" >> $GITHUB_OUTPUT
+          echo "version=$(node -p 'require("./package.json").version')" >> $GITHUB_OUTPUT
       - uses: Wesley-Work/changelog-action@develop
         id: changelog
         env:
@@ -63,8 +63,8 @@ jobs:
         env:
           BODY: ${{ github.event.comment.body }}
         run: |
-          txt=$(cat packages/site/CHANGELOG.md)
-          echo "${txt%%##*}$BODY${txt##*---}" > packages/site/CHANGELOG.md
+          txt=$(cat ./CHANGELOG.md)
+          echo "${txt%%##*}$BODY${txt##*---}" > ./CHANGELOG.md
           git add .
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -84,7 +84,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: tag and push if needed
         run: |
-          data=$(cat packages/site/package.json)
+          data=$(cat ./package.json)
           re="\"version\": \"([^\"]*)\""
           [[ $data =~ $re ]]
           echo "${BASH_REMATCH[1]}"
