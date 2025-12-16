@@ -1,19 +1,19 @@
 {
-  "name": "rsa-verify",
-  "version": "1.0.0",
-  "description": "RSA密钥验签",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
+  "name": "@wesley-0808/rsa-verify",
+  "version": "0.0.1",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/mjs/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
       },
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/mjs/index.mjs"
       }
     }
   },
@@ -21,8 +21,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/index.ts --format cjs,esm --dts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c && tsc --emitDeclarationOnly",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"Error: no lint specified\" && exit 1"
   },
   "keywords": [
     "rsa",
@@ -31,9 +32,15 @@
     "crypto"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
-    "tsdown": "^0.18.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "rollup": "^4.53.5",
+    "rollup-plugin-dts": "^6.3.0",
     "typescript": "^5.9.3"
   }
 }
