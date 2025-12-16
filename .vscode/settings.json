@@ -1,0 +1,54 @@
+{
+  "eslint.format.enable": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[less]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": [
+    "backtop",
+    "cascader",
+    "codesandbox",
+    "colkey",
+    "hoverable",
+    "maxcharacter",
+    "maxlength",
+    "miniprogram",
+    "modeless",
+    "nuxt",
+    "popconfirm",
+    "popperjs",
+    "precaching",
+    "rowspan",
+    "sider",
+    "tdesign",
+    "tdoc",
+    "tmenu",
+    "tnode",
+    "vnode",
+    "wechat"
+  ]
+}
