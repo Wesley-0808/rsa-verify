@@ -1,6 +1,6 @@
 {
   "name": "@wesley-0808/rsa-verify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/mjs/index.mjs",
   "types": "./dist/types/index.d.ts",
@@ -31,7 +31,8 @@
     "signature",
     "crypto"
   ],
-  "author": "",
+  "author": "wesley",
+  "packageManager": "pnpm@9.5.0",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-typescript": "^12.3.0",
+    "@types/node": "^25.0.2",
     "rollup": "^4.53.5",
     "rollup-plugin-dts": "^6.3.0",
     "typescript": "^5.9.3"
