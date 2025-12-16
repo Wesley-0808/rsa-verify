@@ -1,6 +1,6 @@
 {
   "name": "@wesley-0808/rsa-verify",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/mjs/index.mjs",
   "types": "./dist/types/index.d.ts",
@@ -49,7 +49,6 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@types/node": "^25.0.2",
-    "jsencrypt": "^3.5.4"
+    "@types/node": "^25.0.2"
   }
 }
