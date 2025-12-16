@@ -47,5 +47,8 @@
     "rollup": "^4.53.5",
     "rollup-plugin-dts": "^6.3.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/node": "^25.0.2"
   }
 }
