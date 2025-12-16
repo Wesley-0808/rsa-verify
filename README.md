@@ -16,6 +16,11 @@ A TypeScript library for verifying RSA signatures, built with tsdown for multipl
 ## Installation
 
 ```bash
+pnpm add rsa-verify
+```
+
+Or with npm:
+```bash
 npm install rsa-verify
 ```
 
@@ -75,7 +80,7 @@ Verify an RSA signature with custom options.
 - `options` (VerifyOptions, optional): Verification options
   - `algorithm` (string): Hash algorithm (default: 'RSA-SHA256')
   - `signatureEncoding` (BufferEncoding): Signature encoding (default: 'base64')
-  - `keyFormat` ('pem' | 'der'): Public key format (default: 'pem')
+
 
 **Returns:** `boolean` - true if signature is valid, false otherwise
 
@@ -115,7 +120,7 @@ Validate that a public key is in the correct format.
 This library is built using [tsdown](https://tsdown.dev/):
 
 ```bash
-npm run build
+pnpm build
 ```
 
 Output formats:
