@@ -9,10 +9,6 @@ export interface VerifyOptions {
    */
   algorithm?: string;
   /**
-   * The format of the public key (default: 'pem')
-   */
-  keyFormat?: 'pem' | 'der';
-  /**
    * The encoding of the signature (default: 'base64')
    */
   signatureEncoding?: BufferEncoding;
@@ -51,7 +47,6 @@ export function verifySignature(
     
     return verify.verify(publicKey, signatureBuffer);
   } catch (error) {
-    console.error('Verification error:', error);
     return false;
   }
 }
