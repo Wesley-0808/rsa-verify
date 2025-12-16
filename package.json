@@ -49,6 +49,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@types/node": "^25.0.2",
     "jsencrypt": "^3.5.4"
   }
 }
