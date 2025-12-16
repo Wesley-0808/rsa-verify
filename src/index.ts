@@ -8,10 +8,6 @@ export interface VerifyOptions {
    * The algorithm to use for verification (default: 'RSA-SHA256')
    */
   algorithm?: string;
-  /**
-   * The encoding of the signature (default: 'base64')
-   */
-  signatureEncoding?: BufferEncoding;
 }
 
 /**
@@ -31,7 +27,6 @@ export function verifySignature(
   try {
     const {
       algorithm = 'RSA-SHA256',
-      signatureEncoding = 'base64'
     } = options;
 
     // Create verify object
@@ -42,7 +37,7 @@ export function verifySignature(
     
     // Verify signature
     const signatureBuffer = typeof signature === 'string' 
-      ? Buffer.from(signature, signatureEncoding)
+      ? Buffer.from(signature)
       : signature;
     
     return verify.verify(publicKey, signatureBuffer);
@@ -65,7 +60,6 @@ export function verifySHA256(
 ): boolean {
   return verifySignature(data, signature, publicKey, {
     algorithm: 'RSA-SHA256',
-    signatureEncoding: 'base64'
   });
 }
 
@@ -83,7 +77,6 @@ export function verifySHA512(
 ): boolean {
   return verifySignature(data, signature, publicKey, {
     algorithm: 'RSA-SHA512',
-    signatureEncoding: 'base64'
   });
 }
 
