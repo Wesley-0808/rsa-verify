@@ -16,9 +16,9 @@ export async function verifySignature(
   data: string,
   signature: string,
   publicKey: string,
-  options?: { hashAlgorithm?: 'SHA256' | 'SHA512' }
+  options?: { hashAlgorithm?: 'SHA-256' | 'SHA-512' }
 ): Promise<boolean> {
-  const { hashAlgorithm = 'SHA256' } = options || {};
+  const { hashAlgorithm = 'SHA-256' } = options || {};
   try {
     // 编码原始数据
     const encoder = new TextEncoder();
@@ -63,7 +63,7 @@ export async function verifySHA256(
   signature: string,
   publicKey: string
 ): Promise<boolean> {
-  return verifySignature(data, signature, publicKey, { hashAlgorithm: 'SHA256' });
+  return verifySignature(data, signature, publicKey, { hashAlgorithm: 'SHA-256' });
 }
 
 export async function verifySHA512(
@@ -71,7 +71,7 @@ export async function verifySHA512(
   signature: string,
   publicKey: string
 ): Promise<boolean> {
-  return verifySignature(data, signature, publicKey, { hashAlgorithm: 'SHA512' });
+  return verifySignature(data, signature, publicKey, { hashAlgorithm: 'SHA-512' });
 }
 
 export function validatePublicKey(publicKey: string): boolean {
