@@ -48,8 +48,8 @@ jobs:
           if [[ "$VERSION" == *"-"* ]]
           then
             TAG_NAME="${VERSION##*-}"
-            cd packages/site && npm publish --tag "${TAG_NAME%%.*}"
+            cd ./ && npm publish --tag "${TAG_NAME%%.*}"
           else
-            cd packages/site && npm publish
+            cd ./ && npm publish
           fi
 
