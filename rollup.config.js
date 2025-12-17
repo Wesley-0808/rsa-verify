@@ -23,7 +23,6 @@ export default [
         }
       })
     ],
-    external: ['crypto']
   },
 
   // ES Module
@@ -45,6 +44,26 @@ export default [
         }
       })
     ],
-    external: ['crypto']
+  },
+
+  // UMD
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/lib/rsa-verify.js',
+      format: 'iife',
+      name: 'RSAVerify',
+      exports: 'named'
+    },
+    plugins: [
+      nodeResolve(),
+      typescript({
+        tsconfig: './tsconfig.build.json',
+        compilerOptions: {
+          declaration: false,
+          outDir: 'dist/lib'
+        }
+      })
+    ]
   }
 ];
